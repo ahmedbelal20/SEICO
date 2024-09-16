@@ -1,3 +1,13 @@
+# --- Added ---
+# Build Directory
+build
+
+# VS Code
+*.vscode
+
+
+# --- C++ .gitignore template ---
+
 # Prerequisites
 *.d
 
