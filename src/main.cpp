@@ -4,6 +4,7 @@
 
 int main()
 {
-	Log::LogMessage("Hello World!");
+	Logging log;
+	log.LogMessage("Hello World!");
 	std::cin.get();
 }
