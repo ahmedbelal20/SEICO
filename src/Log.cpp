@@ -2,12 +2,18 @@
 
 #include "Log.h"
     
+class Logging {
 
-namespace Log {
+    Logging() {}
 
-    void LogMessage(const char* message)
+private:
+    LogLevel LogLevel = LEVEL_ERROR;
+
+
+    void inline LogMessage(const char* message)
     {
-        std::cout << message << std::endl;
+    std::cout << message << std::endl;
     }
-
 }
+
+
