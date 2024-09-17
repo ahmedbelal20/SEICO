@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 set(SRC_FILES
     src/main.cpp 
-    src/Log.cpp
+    src/Logging.cpp
 )
 
 set(INCLUDE_DIRS
