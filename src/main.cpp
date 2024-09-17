@@ -1,10 +1,12 @@
 #include <iostream>
 
-#include "Log.h"
+#include "Logging.h"
 
 int main()
 {
-	Logging log;
-	log.LogMessage("Hello World!");
+	Logging::Logger logger;
+	logger.LogError("This is an error!");
+	logger.LogWarning("This is a warning!");
+	logger.LogInfo("This is a message!");
 	std::cin.get();
 }
