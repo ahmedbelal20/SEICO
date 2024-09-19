@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Logging.h"
+#include "logging.h"
 
 /*
 Defines the configuration for the logging system. Options are:

@@ -1,12 +1,11 @@
-#include <iostream>
+#include "mainwindow.h"
 
-#include "Logging.h"
+#include <QApplication>
 
-int main()
+int main(int argc, char *argv[])
 {
-	Logging::Logger logger;
-	logger.LogError("This is an error!");
-	logger.LogWarning("This is a warning!");
-	logger.LogInfo("This is a message!");
-	std::cin.get();
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
 }
