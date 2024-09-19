@@ -5,13 +5,13 @@ namespace Logging {
     class Logger
     {
 
-    public:
-
+    private:
         Logger();
 
-        void LogInfo(const char* message);
-        void LogWarning(const char* message);
-        void LogError(const char* message);
+    public:
+        static void LogInfo(const char* message);
+        static void LogWarning(const char* message);
+        static void LogError(const char* message);
 
     };
 }
