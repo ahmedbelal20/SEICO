@@ -1,2 +1,2 @@
-# demo-project
-A personal demo project to learn the basics of CMake while playing around with C++
+# seico
+A work-in-progress project. More details soon..
