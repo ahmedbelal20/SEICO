@@ -20,7 +20,7 @@ project(SEICO VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_AUTOUIC ON)
 # CMAKE_AUTOUIC_SEARCH_PATHS variable is used to initialize AUTOUIC_SEARCH_PATHS property on all the targets.
 # UTOUIC_SEARCH_PATHS is a search path list used by CMAKE_AUTOUIC to find included .ui files.
-set(CMAKE_AUTOUIC_SEARCH_PATHS ./include)
+set(CMAKE_AUTOUIC_SEARCH_PATHS include)
 
 # MOC = Meta-Object Compiler - a QT program that handles Qt's C++ extensions.
 # The moc tool reads a C++ header file. If it finds one or more class declarations that contain the Q_OBJECT macro,
@@ -30,7 +30,6 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS ./include)
 # i.e. without having to use commands like QT4_WRAP_CPP(), qt5_wrap_cpp(), etc. Currently, Qt versions 4 to 6 are supported.
 # This property is initialized by the value of the CMAKE_AUTOMOC variable if it is set when a target is created.
 set(CMAKE_AUTOMOC ON)
-
 
 # RCC = Resource Compiler - a tool used to embed resources into a Qt application during the build process.
 # rcc works by generating a C++ source file containing data specified in a Qt resource (.qrc) file.
@@ -55,7 +54,9 @@ set(PROJECT_SOURCES
 )
 
 # Create and set a variable containing include directories for header files
-set(INCLUDE_DIRECTORIES ./include)
+set(INCLUDE_DIRECTORIES
+    include
+)
 
 # Build the target from sources (QT6)
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
