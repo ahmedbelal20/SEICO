@@ -11,7 +11,6 @@ LOG_LEVEL_INFO
 */ 
 #define LOG_LEVEL_INFO
 
-
 #ifdef LOG_LEVEL_WARNING
     #define LOG_LEVEL_ERROR
 #endif
