@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setStyleSheet("background-color: black;");
     connect(ui->button1, &QPushButton::clicked, this, &MainWindow::on_click);
 }
 
@@ -18,5 +19,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_click()
 {
+    ui->trace->insertRow();
     Logging::Logger::LogInfo("Button clicked!");
 }
