@@ -12,6 +12,7 @@ Trace::Trace(QWidget *parent)
     // Set trace to read-only
     this->setEditTriggers(QAbstractItemView::NoEditTriggers);
     // Initialize the grid model for the trace
+    model = new QStandardItemModel(0, 6, this);
     // Initialize table headers
     model->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
     // Assign the model to the trace
@@ -19,10 +20,8 @@ Trace::Trace(QWidget *parent)
 }
 
 
-void Trace::insertRow()
+void Trace::addEntry(QList<QStandardItem *> rowItems)
 {
-    model->insertRow(1);
-    setModel(model);
+    model->appendRow(rowItems);
     Logging::Logger::LogInfo("Click detected!");
-
 }

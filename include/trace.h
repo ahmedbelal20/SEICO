@@ -8,11 +8,12 @@ class Trace : public QTableView
     Q_OBJECT
 public:
     explicit Trace(QWidget *parent = nullptr);
-    void insertRow();
-    QStandardItemModel *model = new QStandardItemModel(0, 6, this);
+    QStandardItemModel *model;
 
 signals:
 
+public slots:
+    void addEntry(QList<QStandardItem *> rowItems);
 };
 
 
