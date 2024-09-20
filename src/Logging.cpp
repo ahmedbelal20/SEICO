@@ -26,7 +26,6 @@ LOG_LEVEL_INFO
     #undef LOG_LEVEL_INFO
 #endif
 
-Logging::Logger::Logger() {}
 
 void Logging::Logger::LogInfo(const char* message)
 {
