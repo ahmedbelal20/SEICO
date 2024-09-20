@@ -48,8 +48,10 @@ set(PROJECT_SOURCES
         src/main.cpp
         src/mainwindow.cpp
         src/Logging.cpp
+        src/trace.cpp
         include/mainwindow.h
         include/logging.h
+        include/trace.h
         include/SEICO.ui
 )
 
@@ -87,7 +89,6 @@ set_target_properties(SEICO PROPERTIES
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
-
 )
 
 include(GNUInstallDirs)
