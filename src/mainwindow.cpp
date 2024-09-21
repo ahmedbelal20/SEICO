@@ -19,6 +19,5 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_click()
 {
-    ui->trace->insertRow();
     Logging::Logger::LogInfo("Button clicked!");
 }
