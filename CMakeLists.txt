@@ -52,7 +52,7 @@ set(PROJECT_SOURCES
         include/mainwindow.h
         include/logging.h
         include/trace.h
-        include/messages.h
+        include/message.h
         include/SEICO.ui
 )
 
