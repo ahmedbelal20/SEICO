@@ -6,7 +6,7 @@ namespace Logging {
     {
 
     private:
-        Logger();
+        Logger() = delete;
 
     public:
         static void LogInfo(const char* message);
