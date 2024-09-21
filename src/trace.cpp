@@ -1,7 +1,6 @@
 #include "trace.h"
 
 #include <QStandardItemModel>
-#include <QPalette>
 #include <QStandardItem>
 
 #include "logging.h"
@@ -18,7 +17,6 @@ Trace::Trace(QWidget *parent)
     // Assign the model to the trace
     setModel(model);
 }
-
 
 void Trace::addEntry(QList<QStandardItem *> rowItems)
 {
