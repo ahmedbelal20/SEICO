@@ -50,11 +50,13 @@ set(PROJECT_SOURCES
         src/Logging.cpp
         src/trace.cpp
         src/messagedatamodel.cpp
+        src/traceitem.cpp
         include/mainwindow.h
         include/logging.h
         include/trace.h
         include/message.h
         include/messagedatamodel.h
+        include/traceitem.h
         include/SEICO.ui
 )
 
