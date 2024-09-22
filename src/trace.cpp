@@ -4,21 +4,28 @@
 #include <QStandardItem>
 
 #include "logging.h"
+#include "message.h"
+
 
 Trace::Trace(QWidget *parent)
     : QTableView(parent)
 {
-    // Set trace to read-only
-    this->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    initTrace();
     initModels();
+}
 
+void::Trace::initTrace()
+{
+    // Set trace to read-only
+    setEditTriggers(QAbstractItemView::NoEditTriggers);
+    setSortingEnabled(true);
 }
 
 void::Trace::initModels()
 {
     // Initialize the grid models for the trace
-    duplicateMessageInstanceModel = new QStandardItemModel(0, 8, this);
-    singleMessageInstanceModel = new QStandardItemModel(0, 8, this);
+    duplicateMessageInstanceModel = new QStandardItemModel(0, columnCount, this);
+    singleMessageInstanceModel = new QStandardItemModel(0, columnCount, this);
     // Initialize models headers
     duplicateMessageInstanceModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
     singleMessageInstanceModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
@@ -28,15 +35,26 @@ void::Trace::initModels()
     setModel(duplicateMessageInstanceModel);
 }
 
-void Trace::displayNewMessage (Message::Message message)
+void Trace::displayNewMessage (Message::Message& message)
 {
-    //QList<QStandardItem *> rowItems;
-    //Trace::addEntry(rowItems);
+    QList<QStandardItem *> *rowItems = new QList<QStandardItem *>(columnCount);
+    QStandardItem *item = new QStandardItem();
+    item->setData(message.time);
+    //rowItems.append(&item);
+    for(int i = 0; i <=columnCount; i++)
+    {
+        item->setData("hello");
+        rowItems->append(item);
+    }
+    duplicateMessageInstanceModel->insertRow(duplicateMessageInstanceModel->rowCount()+1, *rowItems);
 }
 
 void Trace::testFunction()
 {
     Logging::Logger::logInfo("Entered test function!");
+    Message::CanMessage messge;
+    messge.time = 2.0f;
+    displayNewMessage(messge);
 }
 
 void Trace::displayAllColumns()
