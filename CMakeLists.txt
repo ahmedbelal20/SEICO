@@ -49,10 +49,12 @@ set(PROJECT_SOURCES
         src/mainwindow.cpp
         src/Logging.cpp
         src/trace.cpp
+        src/messagedatamodel.cpp
         include/mainwindow.h
         include/logging.h
         include/trace.h
         include/message.h
+        include/messagedatamodel.h
         include/SEICO.ui
 )
 
