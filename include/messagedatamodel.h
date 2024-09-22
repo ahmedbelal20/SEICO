@@ -1,10 +1,10 @@
 #ifndef MESSAGEDATAMODEL_H
 #define MESSAGEDATAMODEL_H
 
-#include <QAbstractTableModel>
+#include <QAbstractItemModel>
 #include <QObject>
 
-class MessageDataModel : public QAbstractTableModel
+class MessageDataModel : public QAbstractItemModel
 {
 
     Q_OBJECT
@@ -17,7 +17,6 @@ public:
     explicit MessageDataModel(QObject *parent = nullptr);
     inline int rowCount(const QModelIndex &parent = QModelIndex()) const override {return dataRowCount;}
     inline int columnCount(const QModelIndex &parent = QModelIndex()) const override{return dataColumnCount;}
-
 };
 
 #endif // MESSAGEDATAMODEL_H
