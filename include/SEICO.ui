@@ -29,28 +29,6 @@
    <property name="autoFillBackground">
     <bool>false</bool>
    </property>
-   <widget class="Trace" name="trace">
-    <property name="geometry">
-     <rect>
-      <x>380</x>
-      <y>0</y>
-      <width>821</width>
-      <height>371</height>
-     </rect>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <property name="sizeAdjustPolicy">
-     <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustIgnored</enum>
-    </property>
-    <property name="selectionBehavior">
-     <enum>QAbstractItemView::SelectionBehavior::SelectRows</enum>
-    </property>
-    <property name="showGrid">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QPushButton" name="button1">
     <property name="geometry">
      <rect>
@@ -62,6 +40,16 @@
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="Trace" name="trace">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>0</y>
+      <width>821</width>
+      <height>431</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -80,7 +68,7 @@
  <customwidgets>
   <customwidget>
    <class>Trace</class>
-   <extends>QTableView</extends>
+   <extends>QTreeView</extends>
    <header>trace.h</header>
   </customwidget>
  </customwidgets>

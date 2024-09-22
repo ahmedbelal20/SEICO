@@ -1,13 +1,13 @@
 #pragma once
 
-#include <QTableView>
+#include <QTreeView>
 #include <QStandardItemModel>
 #include <QStringList>
 
 #include "message.h"
 
 
-class Trace : public QTableView
+class Trace : public QTreeView
 {
 
     Q_OBJECT

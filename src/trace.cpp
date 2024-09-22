@@ -5,7 +5,7 @@
 
 
 Trace::Trace(QWidget *parent)
-    : QTableView(parent)
+    : QTreeView(parent)
 {
     initTrace();
     initModels();
