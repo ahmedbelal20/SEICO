@@ -26,12 +26,12 @@ public:
     explicit Trace(QWidget *parent = nullptr);
     void testFunction();
     void displayNewMessage(Message::Message& message);
-    void inline displayAllColumns();
-    void inline updateTraceColumns(bool *isColumnHidden);
+    inline void displayAllColumns();
+    inline void updateTraceColumns(bool *isColumnHidden);
 
 private:
-    void inline initTrace();
-    void inline initModels();
+    inline void initTrace();
+    inline void initModels();
 
 
 signals:
