@@ -10,16 +10,49 @@ Trace::Trace(QWidget *parent)
 {
     // Set trace to read-only
     this->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    // Initialize the grid model for the trace
-    model = new QStandardItemModel(0, 6, this);
-    // Initialize table headers
-    model->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
-    // Assign the model to the trace
-    setModel(model);
+    initModels();
+
 }
 
-void Trace::addEntry(QList<QStandardItem *> rowItems)
+void::Trace::initModels()
 {
-    model->appendRow(rowItems);
-    Logging::Logger::LogInfo("Click detected!");
+    // Initialize the grid models for the trace
+    duplicateMessageInstanceModel = new QStandardItemModel(0, 8, this);
+    singleMessageInstanceModel = new QStandardItemModel(0, 8, this);
+    // Initialize models headers
+    duplicateMessageInstanceModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
+    singleMessageInstanceModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
+    // Unhide all columns
+    displayAllColumns();
+    // Assign a model to the trace
+    setModel(duplicateMessageInstanceModel);
+}
+
+void Trace::displayNewMessage (Message::Message message)
+{
+    //QList<QStandardItem *> rowItems;
+    //Trace::addEntry(rowItems);
+}
+
+void Trace::testFunction()
+{
+    Logging::Logger::logInfo("Entry Added!");
+    displayAllColumns();
+}
+
+void Trace::updateHiddenColumns()
+{
+    for(int column = 0; column < columnCount; column++)
+    {
+        this->setColumnHidden(column, isColumnHidden[column]);
+    }
+}
+
+void Trace::displayAllColumns()
+{
+    for (int column = 0; column <columnCount; column++)
+    {
+        isColumnHidden[column]= false;
+    }
+    updateHiddenColumns();
 }
