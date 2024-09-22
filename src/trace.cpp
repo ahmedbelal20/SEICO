@@ -1,8 +1,5 @@
 #include "trace.h"
 
-#include <QStandardItemModel>
-#include <QStandardItem>
-
 #include "logging.h"
 #include "message.h"
 
@@ -37,19 +34,15 @@ void::Trace::initModels()
 
 void Trace::displayNewMessage (Message::Message& message)
 {
-    QList<QStandardItem *> *rowItems = new QList<QStandardItem *>(1);
-    QStandardItem *item = new QStandardItem();
-    item->setData("hello");
-    (*rowItems)[0] = item;
-    duplicateMessageInstanceModel->insertRow(duplicateMessageInstanceModel->rowCount(), *rowItems);
+
 }
 
 void Trace::testFunction()
 {
     Logging::Logger::logInfo("Entered test function!");
-    Message::CanMessage messge;
-    messge.time = 2.0f;
-    displayNewMessage(messge);
+    Message::CanMessage message;
+    message.time = 2.0f;
+    displayNewMessage(message);
 }
 
 void Trace::displayAllColumns()
