@@ -20,5 +20,4 @@ MainWindow::~MainWindow()
 void MainWindow::on_click()
 {
     ui->trace->testFunction();
-    Logging::Logger::logInfo("Button clicked!");
 }

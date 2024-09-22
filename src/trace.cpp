@@ -36,23 +36,21 @@ void Trace::displayNewMessage (Message::Message message)
 
 void Trace::testFunction()
 {
-    Logging::Logger::logInfo("Entry Added!");
-    displayAllColumns();
-}
-
-void Trace::updateHiddenColumns()
-{
-    for(int column = 0; column < columnCount; column++)
-    {
-        this->setColumnHidden(column, isColumnHidden[column]);
-    }
+    Logging::Logger::logInfo("Entered test function!");
 }
 
 void Trace::displayAllColumns()
 {
     for (int column = 0; column <columnCount; column++)
     {
-        isColumnHidden[column]= false;
+        setColumnHidden(column, false);
     }
-    updateHiddenColumns();
+}
+
+void Trace::updateTraceColumns(bool *isColumnHidden)
+{
+    for (int column = 0; column <columnCount; column++)
+    {
+        setColumnHidden(column, isColumnHidden[column]);
+    }
 }
