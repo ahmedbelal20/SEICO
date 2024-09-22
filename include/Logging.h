@@ -9,9 +9,9 @@ namespace Logging {
         Logger() = delete;
 
     public:
-        static void LogInfo(const char* message);
-        static void LogWarning(const char* message);
-        static void LogError(const char* message);
+        static void logInfo(const char* message);
+        static void logWarning(const char* message);
+        static void logError(const char* message);
 
     };
 }

@@ -27,21 +27,21 @@ LOG_LEVEL_INFO
 #endif
 
 
-void Logging::Logger::LogInfo(const char* message)
+void Logging::Logger::logInfo(const char* message)
 {
     #ifdef LOG_LEVEL_INFO
         std::cout << "[INFO]: " << message << std::endl;
     #endif
 }
 
-void Logging::Logger::LogWarning(const char* message)
+void Logging::Logger::logWarning(const char* message)
 {
     #ifdef LOG_LEVEL_WARNING
         std::cout << "[WARNING]: " << message << std::endl;
     #endif
 }
 
-void Logging::Logger::LogError(const char* message)
+void Logging::Logger::logError(const char* message)
 {
     #ifdef LOG_LEVEL_ERROR
         std::cout << "[ERROR]: " << message << std::endl;
