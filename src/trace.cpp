@@ -37,16 +37,11 @@ void::Trace::initModels()
 
 void Trace::displayNewMessage (Message::Message& message)
 {
-    QList<QStandardItem *> *rowItems = new QList<QStandardItem *>(columnCount);
+    QList<QStandardItem *> *rowItems = new QList<QStandardItem *>(1);
     QStandardItem *item = new QStandardItem();
-    item->setData(message.time);
-    //rowItems.append(&item);
-    for(int i = 0; i <=columnCount; i++)
-    {
-        item->setData("hello");
-        rowItems->append(item);
-    }
-    duplicateMessageInstanceModel->insertRow(duplicateMessageInstanceModel->rowCount()+1, *rowItems);
+    item->setData("hello");
+    (*rowItems)[0] = item;
+    duplicateMessageInstanceModel->insertRow(duplicateMessageInstanceModel->rowCount(), *rowItems);
 }
 
 void Trace::testFunction()
