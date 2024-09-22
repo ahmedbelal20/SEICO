@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //setStyleSheet("background-color: dark;");
+    //setStyleSheet("background-color: white;");
     connect(ui->button1, &QPushButton::clicked, this, &MainWindow::on_click);
 }
 
