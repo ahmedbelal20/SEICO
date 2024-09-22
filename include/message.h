@@ -22,7 +22,7 @@ namespace Message {
     {
     public:
 
-        Message();
+        Message() {}
 
     public:
 
@@ -31,8 +31,8 @@ namespace Message {
         Channel channel;
         float time;
         // Database attributes
-        std::string database = NULL;
-        std::string name = NULL;
+        std::string database;
+        std::string name;
     };
 
 
@@ -41,7 +41,7 @@ namespace Message {
 
     public:
 
-        CanMessage();
+        CanMessage() {}
 
     public:
 
