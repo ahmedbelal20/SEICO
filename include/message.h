@@ -47,7 +47,7 @@ namespace Message {
 
         char dlc;
         bool isRtr, isExtended, isValid;
-        char data[8];
+        unsigned char data[8];
         int id;
 
     };
