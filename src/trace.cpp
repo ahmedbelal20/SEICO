@@ -9,6 +9,7 @@ Trace::Trace(QWidget *parent)
 {
     initTrace();
     initModels();
+    assignDuplicateMessageModel();
 }
 
 void::Trace::initTrace()
@@ -21,15 +22,25 @@ void::Trace::initTrace()
 void::Trace::initModels()
 {
     // Initialize the grid models for the trace
-    duplicateMessageInstanceModel = new QStandardItemModel(0, columnCount, this);
-    singleMessageInstanceModel = new QStandardItemModel(0, columnCount, this);
+    m_duplicateMessageModel = new QStandardItemModel(0, m_columnCount, this);
+    m_singleMessageModel = new QStandardItemModel(0, m_columnCount, this);
     // Initialize models headers
-    duplicateMessageInstanceModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
-    singleMessageInstanceModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data"});
+    m_duplicateMessageModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data", "Database"});
+    m_singleMessageModel->setHorizontalHeaderLabels({"Time", "Chn", "ID", "Name", "Event", "Dir", "DLC", "Data", "Database"});
     // Unhide all columns
     displayAllColumns();
-    // Assign a model to the trace
-    setModel(duplicateMessageInstanceModel);
+}
+
+void Trace::assignDuplicateMessageModel()
+{
+    setSortingEnabled(false);
+    setModel(m_duplicateMessageModel);
+}
+
+void Trace::assignSingleMessageModel()
+{
+    setSortingEnabled(true);
+    setModel(m_singleMessageModel);
 }
 
 void Trace::displayNewMessage (Message::Message& message)
@@ -47,7 +58,7 @@ void Trace::testFunction()
 
 void Trace::displayAllColumns()
 {
-    for (int column = 0; column <columnCount; column++)
+    for (int column = 0; column < m_columnCount; column++)
     {
         setColumnHidden(column, false);
     }
@@ -55,7 +66,7 @@ void Trace::displayAllColumns()
 
 void Trace::updateTraceColumns(bool *isColumnHidden)
 {
-    for (int column = 0; column <columnCount; column++)
+    for (int column = 0; column < m_columnCount; column++)
     {
         setColumnHidden(column, isColumnHidden[column]);
     }

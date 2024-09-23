@@ -12,15 +12,10 @@ class Trace : public QTreeView
 
     Q_OBJECT
 
-public:
-    enum TraceColumn {
-        Col_Time = 0, Col_Chn, Col_Id, Col_Name, Col_Event, Col_Dir, Col_Dlc, Col_Data
-    };
-
 private:
 
-    QStandardItemModel *singleMessageInstanceModel, *duplicateMessageInstanceModel;
-    static const int columnCount = 8;
+    QStandardItemModel *m_singleMessageModel, *m_duplicateMessageModel;
+    static const int m_columnCount = 9;
 
 public:
     explicit Trace(QWidget *parent = nullptr);
@@ -32,7 +27,8 @@ public:
 private:
     inline void initTrace();
     inline void initModels();
-
+    inline void assignDuplicateMessageModel();
+    inline void assignSingleMessageModel();
 
 signals:
 
