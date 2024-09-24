@@ -1,6 +1,6 @@
 #include "messagedatamodel.h"
 
-MessageDataModel::MessageDataModel(QObject *parent)
+DataModel::MessageDataModel::MessageDataModel(QObject *parent)
     : QAbstractItemModel(parent)
 {
 
