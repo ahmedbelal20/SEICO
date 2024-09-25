@@ -20,7 +20,9 @@ namespace DataModel {
         const static int m_dataColumnCount = 9;
 
     public:
-        explicit MessageDataModel(QObject *parent = nullptr);
+        explicit MessageDataModel(const QStringList &headers, QObject *parent = nullptr); // Not implemented
+        ~MessageDataModel(); // Not implemented
+
         inline int rowCount(const QModelIndex &parent = QModelIndex()) const override {return m_dataRowCount;}
         inline int columnCount(const QModelIndex &parent = QModelIndex()) const override{return m_dataColumnCount;}
     };
